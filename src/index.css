@@ -1,3 +1,62 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+html, body {
+    margin: 0;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
+.spaceship {
+    background-image: url(./assets/middle_ground.png);
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+}
+
+.panel {
+    width: 300px;
+    padding: 20px;
+    background-color: #004a5c;
+    border: 3px solid #093553;
+    border-radius: 15px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
+    margin: 50px auto;
+    position: absolute;
+    left: 10vw;
+    bottom: 5vh;
+}
+
+.cadet-name {
+    color: #ffffff;
+    font-size: 24px;
+    margin-bottom: 20px;
+    text-align: center;
+    border-bottom: 2px solid #01333f;
+    padding-bottom: 10px;
+}
+
+.row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    border: 1px solid #01333f;
+    border-radius: 10px;
+    padding: 5px 10px;
+    background: linear-gradient(to right, #093553, #004a5c);
+}
+
+.label {
+    color: #e6e8ea;
+    flex: 1;
+    font-size: 18px;
+}
+
+.value {
+    color: #ffffff;
+    flex: 2;
+    text-align: right;
+    font-size: 18px;
+}
