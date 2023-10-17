@@ -45,7 +45,7 @@ contract Storefront is ERC20, BaseLiquidator, ReentrancyGuard, Ownable {
     }
 
     // Mapping to store added vaults
-    mapping(address => Vault) private added;
+    mapping(address => Vault) public added;
     address public mai; // Address of the MAI token
 
     // Mapping to store withdrawal requests
