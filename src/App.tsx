@@ -1,7 +1,7 @@
 import { ConnectButton } from "@rainbow-me/rainbowkit";
 import styled, { keyframes } from 'styled-components';
 
-import { useAccount } from "wagmi";
+import { useAccount, useEnsName } from 'wagmi'
 
 import { Account } from "./components/Account";
 import { Balance } from "./components/Balance";
@@ -20,6 +20,8 @@ import { WatchPendingTransactions } from "./components/WatchPendingTransactions"
 import { WriteContract } from "./components/WriteContract";
 import { WriteContractPrepared } from "./components/WriteContractPrepared";
 import { CadetNamePanel } from "./components/CadetNamePanel";
+import { SpaceBankCenterPanel } from './components/SpaceBankCenterPanel';
+import { Notifications } from './components/Notifications';
 
 import backgroundImage from './assets/middle_ground.png'; // Import your image
 import spaceImage from './assets/space.png';
@@ -42,27 +44,34 @@ const SpaceImage = styled.div`
 `;
 
 export function App() {
-  const { isConnected } = useAccount();
+  const { isConnected, address } = useAccount();
+  const { data: ensName } = useEnsName({ address })
+
+  const mockDepositAmount = 1000;
+  const mockOnDeposit = () => console.log('Deposit button clicked');
+  const mockOnCreateAccount = () => console.log('Create account button clicked');
+  const mockOnBorrow = () => console.log('Borrow button clicked');
 
   return (
     <>
     <SpaceImage />
     <div className="spaceship">
-      <h1 className="text-xl font-bold">Starter</h1>
 
-      <ConnectButton />
-
+      <div className="network-switcher">
+        <ConnectButton />
+        <Notifications />
+      </div>
+      <SpaceBankCenterPanel 
+            depositAmount={mockDepositAmount} 
+            onDeposit={mockOnDeposit} 
+            onCreateAccount={mockOnCreateAccount} 
+            onBorrow={mockOnBorrow} 
+        />
       {isConnected && (
         <>
-          <NetworkSwitcher />
-          <br />
-          <h2>Account</h2>
-          <Account />
-          <br />
-          <h2>Balance</h2>
+          <CadetNamePanel name={{address}} />
         </>
       )}
-      <CadetNamePanel />
     </div>
     </>
   );
