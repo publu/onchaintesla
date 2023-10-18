@@ -8,8 +8,39 @@ html, body {
     overflow-y: hidden;
 }
 
+.television {
+    position: fixed;
+    display: block;
+    right: 10%;
+    bottom: 10%;
+    width: 580px;
+    height: 545px;
+    overflow: hidden;
+    border-radius: 30px;
+    filter: hue-rotate(200deg) saturate(150%);
+}
+
+.blueish::after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    background: rgb(0 74 92 / 25%);
+    pointer-events: none;
+}
+
+.television iframe {
+    position: absolute;
+    display: block;
+    left: -26px;
+    top: -70px;
+}
+
 .notifications {
-    right: 0px;
+    right: -100px;
+    top: 0px;
     position: absolute;
     font-size: 5rem;
 }
@@ -62,6 +93,23 @@ html, body {
     border-radius: 10px;
     padding: 5px 10px;
     background: linear-gradient(to right, #093553, #004a5c);
+}
+
+.message-input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #01333f;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.send-button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background: linear-gradient(to right, #093553, #004a5c);
+    color: #fff;
+    cursor: pointer;
 }
 
 .label {

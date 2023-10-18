@@ -1,7 +1,8 @@
+import React, { useState, useEffect } from 'react';
 import { ConnectButton } from "@rainbow-me/rainbowkit";
 import styled, { keyframes } from 'styled-components';
 
-import { useAccount, useEnsName } from 'wagmi'
+import { useAccount, useEnsName, useWalletClient } from 'wagmi'
 
 import { Account } from "./components/Account";
 import { Balance } from "./components/Balance";
@@ -47,6 +48,15 @@ export function App() {
   const { isConnected, address } = useAccount();
   const { data: ensName } = useEnsName({ address })
 
+  const { data: walletClient, isError, isLoading } = useWalletClient()
+  const [client, setClient] = useState(walletClient);
+
+  useEffect(() => {
+    if(walletClient){
+      setClient(walletClient);
+    }
+  }, [walletClient]);
+
   const mockDepositAmount = 1000;
   const mockOnDeposit = () => console.log('Deposit button clicked');
   const mockOnCreateAccount = () => console.log('Create account button clicked');
@@ -59,14 +69,14 @@ export function App() {
 
       <div className="network-switcher">
         <ConnectButton />
-        <Notifications />
+        <Notifications client={client} />
       </div>
-      <SpaceBankCenterPanel 
+     {/*<SpaceBankCenterPanel 
             depositAmount={mockDepositAmount} 
             onDeposit={mockOnDeposit} 
             onCreateAccount={mockOnCreateAccount} 
             onBorrow={mockOnBorrow} 
-        />
+        />*/}
       {isConnected && (
         <>
           <CadetNamePanel name={{address}} />
