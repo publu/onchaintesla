@@ -22,10 +22,12 @@ import { WriteContract } from "./components/WriteContract";
 import { WriteContractPrepared } from "./components/WriteContractPrepared";
 import { CadetNamePanel } from "./components/CadetNamePanel";
 import { SpaceBankCenterPanel } from './components/SpaceBankCenterPanel';
-import { Notifications } from './components/Notifications';
+import { PushChat } from './components/Notifications';
+import { XmtpChat } from './components/XmtpChat';
 
 import backgroundImage from './assets/middle_ground.png'; // Import your image
 import spaceImage from './assets/space.png';
+import teslaImage from './assets/tesla.png';
 
 const updown = keyframes`
   0% { transform: translateY(0); }
@@ -42,6 +44,21 @@ const SpaceImage = styled.div`
   position: absolute;
   animation: ${updown} 25s infinite alternate;
   z-index: -1;
+`;
+
+const float = keyframes`
+  0% { transform: translateX(0); }
+  50% { transform: translateX(100%); }
+  100% { transform: translateX(0); }
+`;
+
+const FloatingTesla = styled.div`
+  background-image: url(${teslaImage});
+  background-size: cover;
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  animation: ${float} 5s infinite alternate;
 `;
 
 export function App() {
@@ -65,11 +82,13 @@ export function App() {
   return (
     <>
     <SpaceImage />
+    <FloatingTesla />
     <div className="spaceship">
 
       <div className="network-switcher">
         <ConnectButton />
-        <Notifications client={client} />
+        <PushChat client={client} />
+        <XmtpChat />
       </div>
      {/*<SpaceBankCenterPanel 
             depositAmount={mockDepositAmount} 

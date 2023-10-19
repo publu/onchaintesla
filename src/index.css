@@ -8,6 +8,9 @@ html, body {
     overflow-y: hidden;
 }
 
+.xmtvision {
+}
+
 .television {
     position: fixed;
     display: block;
@@ -41,6 +44,13 @@ html, body {
 .notifications {
     right: -100px;
     top: 0px;
+    position: absolute;
+    font-size: 5rem;
+}
+
+.notification2 {
+    right: -100px;
+    top: 50px;
     position: absolute;
     font-size: 5rem;
 }

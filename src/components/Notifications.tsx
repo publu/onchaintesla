@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Iframe from 'react-iframe'
 
-export function Notifications({ walletClient }) {
+export function PushChat({ walletClient }) {
   const [showPanel, setShowPanel] = useState(false);
 
   return (
