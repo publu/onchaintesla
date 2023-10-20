@@ -7,17 +7,29 @@ As a crypto enthusiast navigating the vast universe of DeFi, you need a reliable
 [XMTP](#xmtp)
 
 [Push Protocol](#push-protocol)
+
 [Gnosis Safe](#gnosis-safe)
+
 [Uniswap](#uniswap)
+
 [Spark Lend](#spark-lend)
+
 [ApeCoin](#apecoin)
+
 [zkEVM](#zkevm)
+
 [Scroll](#scroll-testnet)
+
 [Mantle](#mantle)
+
 [Filecoin Virtual Machine](#filecoin-virtual-machine)
+
 [The Graph](#the-graph)
+
 [Connext](#connext)
+
 [Compound](#compound)
+
 [Polygon zkEVM](#polygon-zkevm)
 
 
