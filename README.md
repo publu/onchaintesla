@@ -2,7 +2,7 @@
 
 As a crypto enthusiast navigating the vast universe of DeFi, you need a reliable spaceship equipped with the most advanced tools. Our project is designed to be your trusted companion in this journey, enhancing your DeFi experience by making it smoother, safer, and more profitable. Here's a detailed overview of our project, categorized by each of our esteemed sponsors:
 
-[Mask](#mask) | [XMTP](#xmtp) | [Push Protocol](#push-protocol) | [Gnosis Safe](#gnosis-safe) | [Uniswap](#uniswap) | [Spark Lend](#spark-lend) | [ApeCoin](#apecoin) | [zkEVM](#zkevm) | [Scroll Testnet](#scroll-testnet) | [Mantle](#mantle) | [Filecoin Virtual Machine](#filecoin-virtual-machine) | [The Graph](#the-graph) | [Connext](#connext)
+[Mask](#mask) | [XMTP](#xmtp) | [Push Protocol](#push-protocol) | [Gnosis Safe](#gnosis-safe) | [Uniswap](#uniswap) | [Spark Lend](#spark-lend) | [ApeCoin](#apecoin) | [zkEVM](#zkevm) | [Scroll Testnet](#scroll-testnet) | [Mantle](#mantle) | [Filecoin Virtual Machine](#filecoin-virtual-machine) | [The Graph](#the-graph) | [Connext](#connext) | [Compound](#compound) | [Polygon zkEVM](#polygon-zkevm) | [ApeCoin](#apecoin) | [Scroll Testnet](#scroll-testnet) | [Mantle](#mantle)
 
 ## Mask
 Our user interface, designed like a spaceship command center, provides an immersive and interactive experience. It leverages the Mask/NextId RelationService API for fetching user's information and facilitates real-time communication within the interface. This integration has made it easier to search for users, enhancing the overall user experience.
@@ -45,8 +45,14 @@ Achievements are a unique feature we've incorporated into our project. They are 
 ## Push Protocol
 We've integrated the Push Protocol to add push chat and calling features. Now, you can initiate a chat or a call with just a click of a button.
 
+Related code:
+src/App.tsx
+
 ## Gnosis Safe
 We've enhanced our governance module by integrating the Connext bridge for cross-chain communications within the Gnosis Safe. This pivotal upgrade allows safes to send messages to each other across different chains and execute cross-chain transactions, thereby significantly improving the efficiency and versatility of governance protocols.
+
+Related code:
+hardhat/contracts/governance/ConnextProcessor.sol
 
 ## Compound
 In our quest to make DeFi more engaging and rewarding, we've innovatively incorporated on-chain achievements into our `Mintable.sol` contract specifically for Compound. This feature enables users to earn unique NFTs based on their positions on Compound, adding an exciting layer of gamification to the DeFi experience. 
@@ -60,6 +66,9 @@ hardhat/contracts/achievements/Mintable_CompoundStrategy.sol
 
 ## Uniswap
 Our liquidation engine works with Stability MAI (sMAI for short). It uses user-staked MAI to liquidate loans and uses UniswapV4 hooks to sell the collateral at a certain MAI price. This integration into the stability pool of MAI allows the stability pool contract to sell into Uniswap when the price is acceptable.
+
+Related code:
+hardhat/contracts/liquidation/storefront.sol
 
 ## Polygon zkEVM
 We've deployed an innovative NFT achievements contract on the Polygon zkEVM network. This contract allows users to earn unique NFTs based on their on-chain activities, adding an exciting layer of gamification to the DeFi experience. We've also created a demo and custom artwork specifically for ETH holders on zkEVM, further enhancing the user experience and engagement. This integration not only rewards users for their participation but also fosters a sense of community and achievement among them.
