@@ -87,7 +87,7 @@ export function App() {
 
       <div className="network-switcher">
         <ConnectButton />
-        <PushChat client={client} />
+        <PushChat walletClient={client} />
         <XmtpChat />
       </div>
      {/*<SpaceBankCenterPanel 

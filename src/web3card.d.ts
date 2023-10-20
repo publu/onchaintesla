@@ -1,0 +1,1 @@
+declare module 'web3card/src/apiFunctions.js';

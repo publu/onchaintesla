@@ -2,8 +2,8 @@ import React, { useEffect, useState } from 'react';
 
 import {fetchUniversalProfile} from 'web3card/src/apiFunctions.js';
 
-export function CadetNamePanel({ name }) {
-  const [profile, setProfile] = useState(null);
+export function CadetNamePanel({ name }: { name: { address: string } }) {
+  const [profile, setProfile] = useState<{ avatar: string, identity: string, platform: string } | null>(null);
   const [showPanel, setShowPanel] = useState(false);
 
   useEffect(() => {
