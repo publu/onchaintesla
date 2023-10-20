@@ -430,6 +430,13 @@ contract Mintable is ERC721, ERC721Enumerable, Ownable {
         Strategy functions
     */
 
+    /**
+     * @dev Creates a new mintable token with a specific strategy
+     * @param strategy The address of the strategy contract
+     * @param target The address of the target contract
+     * @param data The data to be passed to the strategy contract
+     * @param baseuri The base URI for the new mintable token
+     */
     function createMintableWithStrategy(address strategy, address target, bytes memory data, string memory baseuri) public onlyOwner {
         if(!strategies[strategy]){
             revert NoSuchStrategy();
@@ -448,6 +455,11 @@ contract Mintable is ERC721, ERC721Enumerable, Ownable {
         ruleCount++;
     }
 
+    /**
+     * @dev Enables or disables a specific strategy
+     * @param strategy The address of the strategy contract
+     * @param enabled Whether the strategy should be enabled or not
+     */
     function setStrategy(address strategy, bool enabled) public onlyOwner {
         strategies[strategy] = enabled;
         emit SetStrategy(strategy, enabled);
