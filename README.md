@@ -27,10 +27,11 @@ We've innovatively incorporated on-chain achievements into our `Mintable.sol` co
 
 ## Polygon zkEVM
 We've deployed an NFT achievements contract to let users earn NFTs for their on-chain activity. We've created a demo and art for ETH holders on zkEVM.
+![Polygon zkEVM ETH Holders](images/zkevm_holder.png)
 
 ## Scroll Testnet
 We've deployed an NFT achievements contract to let users earn NFTs for their on-chain activity. We've created a demo and art for ETH holders on Scroll Testnet.
-![Scroll Testnet ETH Holders](images/scroll_eth.webp)
+![Scroll Testnet ETH Holders](images/scroll_eth.jpg)
 
 ## Mantle
 We've deployed an NFT achievements contract to let users earn NFTs for their on-chain activity. We've created a demo and art for MNT holders on Mantle.
