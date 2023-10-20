@@ -1,0 +1,23 @@
+{
+  "name": "Polygon zkEVM Achievement",
+  "description": "Achievement unlocked for being active on Polygon zkEVM",
+  "image": "ipfs://QmYqggNsdzFzKK3R3sNg19HdWtVX1kQapQo1g5Z69ShuXC",
+  "attributes": [
+      {
+        "trait_type": "Blockchain", 
+        "value": "Polygon"
+      }, 
+      {
+        "trait_type": "Layer-2 Solution", 
+        "value": "zkEVM"
+      }
+  ],
+  "input_data": [
+      {
+        "name":"balanceOf",
+        "type": "address",
+        "identical": true,
+        "inferred":false
+      }
+  ]
+}

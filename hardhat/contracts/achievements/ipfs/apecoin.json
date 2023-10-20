@@ -1,0 +1,23 @@
+{
+  "name": "ApeCoin Achievement",
+  "description": "Achievement unlocked for being a holder of ApeCoin in the DeFi space",
+  "image": "ipfs://QmRBdyatxtLRHuuZWRagX6a7Sbe39TME2zKvN8iubZYsFS",
+  "attributes": [
+      {
+        "trait_type": "Blockchain", 
+        "value": "Ethereum"
+      }, 
+      {
+        "trait_type": "Token", 
+        "value": "ApeCoin"
+      }
+  ],
+  "input_data": [
+      {
+        "name":"balanceOf",
+        "type": "address",
+        "identical": true,
+        "inferred":false
+      }
+  ]
+}

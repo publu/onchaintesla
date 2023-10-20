@@ -1,0 +1,27 @@
+{
+  "name": "Mantle Degen Campaign",
+  "description": "Achievement unlocked for being a holder of MNT on the Mantle Layer-2 scaling solution",
+  "image": "ipfs://QmeruV6bMgvYz98LyS2TL1QRJT8TnGhui7DvFAyf9CD5sA",
+  "attributes": [
+      {
+        "trait_type": "Blockchain", 
+        "value": "Ethereum"
+      }, 
+      {
+        "trait_type": "Layer-2 Solution", 
+        "value": "Mantle"
+      }, 
+      {
+        "trait_type": "Token", 
+        "value": "MNT"
+      }
+  ],
+  "input_data": [
+      {
+        "name":"balanceOf",
+        "type": "address",
+        "identical": true,
+        "inferred":false
+      }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "name": "Scroll ZK Rollup Achievement",
+  "description": "Achievement unlocked for being active on Scroll ZK Rollup",
+  "image": "ipfs://QmQ3f9Z1yudC1w7mL3iMQ43tujUicjV7NzENo1YitZDV9M",
+  "attributes": [
+      {
+        "trait_type": "Blockchain", 
+        "value": "Ethereum"
+      }, 
+      {
+        "trait_type": "Layer-2 Solution", 
+        "value": "Scroll ZK Rollup"
+      }
+  ],
+  "input_data": [
+      {
+        "name":"balanceOf",
+        "type": "address",
+        "identical": true,
+        "inferred":false
+      }
+  ]
+}
