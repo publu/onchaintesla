@@ -3,7 +3,9 @@
 As a crypto enthusiast navigating the vast universe of DeFi, you need a reliable spaceship equipped with the most advanced tools. Our project is designed to be your trusted companion in this journey, enhancing your DeFi experience by making it smoother, safer, and more profitable. Here's a detailed overview of our project, categorized by each of our esteemed sponsors:
 
 [Mask](#mask)
+
 [XMTP](#xmtp)
+
 [Push Protocol](#push-protocol)
 [Gnosis Safe](#gnosis-safe)
 [Uniswap](#uniswap)
@@ -16,7 +18,7 @@ As a crypto enthusiast navigating the vast universe of DeFi, you need a reliable
 [The Graph](#the-graph)
 [Connext](#connext)
 [Compound](#compound)
-[Polygon zkEVM](#polygon-zkevm)]
+[Polygon zkEVM](#polygon-zkevm)
 
 
 ## Mask
