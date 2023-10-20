@@ -2,7 +2,22 @@
 
 As a crypto enthusiast navigating the vast universe of DeFi, you need a reliable spaceship equipped with the most advanced tools. Our project is designed to be your trusted companion in this journey, enhancing your DeFi experience by making it smoother, safer, and more profitable. Here's a detailed overview of our project, categorized by each of our esteemed sponsors:
 
-[Mask](#mask) | [XMTP](#xmtp) | [Push Protocol](#push-protocol) | [Gnosis Safe](#gnosis-safe) | [Uniswap](#uniswap) | [Spark Lend](#spark-lend) | [ApeCoin](#apecoin) | [zkEVM](#zkevm) | [Scroll Testnet](#scroll-testnet) | [Mantle](#mantle) | [Filecoin Virtual Machine](#filecoin-virtual-machine) | [The Graph](#the-graph) | [Connext](#connext) | [Compound](#compound) | [Polygon zkEVM](#polygon-zkevm) | [ApeCoin](#apecoin) | [Scroll Testnet](#scroll-testnet) | [Mantle](#mantle)
+[Mask](#mask)
+[XMTP](#xmtp)
+[Push Protocol](#push-protocol)
+[Gnosis Safe](#gnosis-safe)
+[Uniswap](#uniswap)
+[Spark Lend](#spark-lend)
+[ApeCoin](#apecoin)
+[zkEVM](#zkevm)
+[Scroll](#scroll-testnet)
+[Mantle](#mantle)
+[Filecoin Virtual Machine](#filecoin-virtual-machine)
+[The Graph](#the-graph)
+[Connext](#connext)
+[Compound](#compound)
+[Polygon zkEVM](#polygon-zkevm)]
+
 
 ## Mask
 Our user interface, designed like a spaceship command center, provides an immersive and interactive experience. It leverages the Mask/NextId RelationService API for fetching user's information and facilitates real-time communication within the interface. This integration has made it easier to search for users, enhancing the overall user experience.
@@ -25,10 +40,11 @@ We've innovatively incorporated on-chain achievements into our `Mintable.sol` co
 
 ## Gnosis Safe
 We've developed a module for Connext that enables safes to send messages across chains. This cross-chain communication enhances the functionality of Gnosis Safe by allowing for more complex and versatile transactions.
+We also rewrote the old proposer module (included for visibility) into a Zodiac-enabled module. It was definitely a trip. Didn't realize how different the architecture was from a monolithic module.
 
 Related code:
 hardhat/contracts/governance/ConnextProcessor.sol
-
+hardhat/contracts/governance/ProposerExecutionZodiac.sol
 
 ## Connext
 We've integrated Connext, a modular interoperability protocol that lets you build secure crosschain dApps (xApps). We've created a Gnosis Safe connector module that lets safes communicate between chains using Connext as a bridge.
