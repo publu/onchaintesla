@@ -68,13 +68,13 @@ contract Mintable is ERC721, ERC721Enumerable, Ownable {
 
     /**
          * @dev constructor to create a new ERC721 token with a given name and symbol
-         * @param name the name of the token
+         * @param _name_ the name of the token
          * @param symbol the symbol of the token
      */
-    constructor(string memory name, string memory symbol, address _comparison)
-        ERC721(name, symbol) NominatedOwnable(msg.sender)
+    constructor(string memory _name_, string memory symbol, address _comparison)
+        ERC721(_name_, symbol) Ownable()
     {
-        setContractInfo(name, symbol);
+        setContractInfo(_name_, symbol);
         comparison = _comparison;
     }
 

@@ -26,10 +26,13 @@ abstract contract Mintable_BaseStrategy {
         uint256 count;
         bool disabled;
         bool exists;
+        bool custom;
+        bool bound;
     }
+
 
     uint256 public ruleCount; // number of rules
     mapping(uint256 => MintRules) public mintrules; // numbered rules from id
 
-    function createRule(address, bytes memory, string memory) public {}
+    function createRule(address, bytes memory, string memory) virtual public returns(MintRules memory) {}
 }

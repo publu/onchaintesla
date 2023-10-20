@@ -3,10 +3,8 @@ pragma solidity 0.8.13;
 import "./MintableBaseStrategy.sol";
 
 contract Mintable_Strategy_FarmInfo is Mintable_BaseStrategy {
-    error TxFailedError();
-
     // data in this case is nothing.
-    function createRule(address _target, bytes memory _data, string memory _baseURI) public returns(MintRules memory){
+    function createRule(address _target, bytes memory _data, string memory _baseURI) public override returns(MintRules memory){
 
         address[] memory target = new address[](1);
         target[0] = _target; // AKA target

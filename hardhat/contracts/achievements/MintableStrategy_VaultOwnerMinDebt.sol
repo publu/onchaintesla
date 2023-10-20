@@ -3,10 +3,8 @@ pragma solidity 0.8.13;
 import "./MintableBaseStrategy.sol";
 
 contract Mintable_Strategy_VaultOwnerMinDebt is Mintable_BaseStrategy {
-    error TxFailedError();
-
     // data in this case is amount to check for min borrowed!
-    function createRule(address _target, bytes memory _data, string memory _baseURI) public returns(MintRules memory){
+    function createRule(address _target, bytes memory _data, string memory _baseURI) public override returns(MintRules memory){
 
         address[] memory target = new address[](2);
         target[0] = _target;
