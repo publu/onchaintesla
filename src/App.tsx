@@ -96,7 +96,7 @@ export function App() {
             onCreateAccount={mockOnCreateAccount} 
             onBorrow={mockOnBorrow} 
         />*/}
-      {isConnected && (
+      {isConnected && (address != undefined) && (
         <>
           <CadetNamePanel name={{address}} />
         </>

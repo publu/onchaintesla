@@ -1,7 +1,11 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, FunctionComponent } from 'react';
 import Iframe from 'react-iframe'
 
-export function PushChat({ walletClient }) {
+interface PushChatProps {
+  walletClient: any; // replace 'any' with the actual type of walletClient
+}
+
+export const PushChat: FunctionComponent<PushChatProps> = ({ walletClient }) => {
   const [showPanel, setShowPanel] = useState(false);
 
   return (
