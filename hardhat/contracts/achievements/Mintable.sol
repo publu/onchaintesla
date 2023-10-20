@@ -5,25 +5,16 @@ import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
 import "@openzeppelin/contracts/token/ERC721/extensions/ERC721Enumerable.sol";
 import "@openzeppelin/contracts/utils/Strings.sol";
 import "@openzeppelin/contracts/access/Ownable.sol";
+import "./IComparison.sol";
 
-/*
-    This lets us update the comparisons in case there are more unique ways to compare the data
-*/
-interface Comparison {
-    function _checkUserDatas(
-        uint8 config,
-        bytes memory user, 
-        bytes memory preset, 
-        address msgsender) external view returns (bytes memory);
-    function _callTarget(
-            address _target, 
-            string memory _func, 
-            bytes memory _data, 
-            bytes memory _return,
-            uint8 _comparison,
-            address msgsender) external view returns (bool);
-}
-
+/**
+ * @title Mintable
+ * @dev This contract is an ERC721 token with additional functionality for minting new tokens based on predefined rules.
+ * Each rule is a set of conditions that must be met in order to mint a new token. These conditions are defined as calls to external contracts.
+ * The contract also supports the creation of new minting rules and the modification of existing ones by the contract owner.
+ * Additionally, it provides functionality for creating mintable tokens with a specific strategy, enabling or disabling specific strategies, and setting the base URI for a mint rule.
+ * The contract uses the OpenZeppelin library for ERC721 functionality and ownership control.
+ */
 contract Mintable is ERC721, ERC721Enumerable, Ownable {
 
     error NotAllowed();
@@ -48,6 +39,14 @@ contract Mintable is ERC721, ERC721Enumerable, Ownable {
 
     address public comparison;
 
+    /**
+     * @dev Overrides the _beforeTokenTransfer function of the ERC721 and ERC721Enumerable contracts.
+     * Checks if the token is bound to an address before transferring. If it is, the transfer is not allowed.
+     * @param from address representing the previous owner of the given token ID
+     * @param to address representing the new owner of the given token ID
+     * @param tokenId uint256 ID of the token to be transferred
+     * @param batchSize the number of tokens in the batch
+     */
     function _beforeTokenTransfer(address from, address to, uint256 tokenId, uint256 batchSize) internal override(ERC721, ERC721Enumerable) {
         TokenInfo memory token = tokenTemplate[tokenId];
         MintRules memory rule = mintrules[token.rule];
@@ -58,6 +57,11 @@ contract Mintable is ERC721, ERC721Enumerable, Ownable {
         }
     }
 
+    /**
+     * @dev Overrides the supportsInterface function of the ERC721 and ERC721Enumerable contracts.
+     * @param interfaceId bytes4 value of the interface id to check for support
+     * @return bool value indicating whether the contract supports the given interface
+     */
     function supportsInterface(bytes4 interfaceId) public view override(ERC721, ERC721Enumerable) returns (bool) {
         return super.supportsInterface(interfaceId);
     }
@@ -144,7 +148,7 @@ contract Mintable is ERC721, ERC721Enumerable, Ownable {
             uint8 _comparison,
             address _msgsender) internal view returns (bool) {
 
-        return Comparison(comparison)._callTarget(_target, _func, _data, _return, _comparison,_msgsender);
+        return IComparison(comparison)._callTarget(_target, _func, _data, _return, _comparison,_msgsender);
         /*
         (bool success, bytes memory data) = comparison.delegatecall(
             abi.encodeWithSignature("_callTarget(address,string,bytes,bytes,uint8,address)", _target, _func, _data, _return, _comparison,_msgsender)
@@ -198,7 +202,7 @@ contract Mintable is ERC721, ERC721Enumerable, Ownable {
                     }
                     loop._datas[i]= abi.decode(data,(bytes));
                     */
-                    loop._datas[i]= Comparison(comparison)._checkUserDatas(loop._userDatas[i], _datas[i],loop._datas[i],_msgsender);
+                    loop._datas[i]= IComparison(comparison)._checkUserDatas(loop._userDatas[i], _datas[i],loop._datas[i],_msgsender);
                 }
 
                 if(loop._userDatas[i]==1){
