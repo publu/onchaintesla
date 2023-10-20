@@ -3,13 +3,13 @@
 We're all about revolutionizing the DeFi space. Our codebase is packed with exciting features, all designed to make your DeFi experience smoother, safer, and more profitable. Let's dive into the details:
 
 👥 User Interface:
-Our user interface is welcoming and interactive. It uses the NextId RelationService API to get the user's information and allows users to chat right in the interface. 
+Our user interface is designed like a spaceship command center, providing an immersive and interactive experience. It leverages the NextId RelationService API to fetch user's information and facilitates real-time communication right within the interface.
 
 📬 XMTP Chat:
-We've created a fork of XMTP chat that works seamlessly with the Mask network. This feature allows users to search any connected social accounts and resolve them to an address which can be messaged. Additionally, we've integrated Privy, enabling users to conveniently login with their Apple and Google accounts. Users are able to export their wallet directly from the website too!
+We've created a fork of XMTP chat that works seamlessly with Mask network. This feature allows users to search any connected social accounts and resolve them to an address which can be messaged. Additionally, we've integrated Privy, enabling users to conveniently login with their Apple and Google accounts. Users are able to export their wallet directly from the website too!
 
 📞 Push Chat and Calling:
-We've added push chat and calling features. Now, with just a click of a button, you can initiate a chat or a call. This makes communication within the platform even more seamless and efficient.
+We've added push chat and calling features. Now, with just a click of a button, you can initiate a chat or a call.
 
 👑 Governance Module:
 We've got a governance module built with Zodiac avatars and works within Gnosis Safe. It's a key piece of the puzzle for making governance protocols lindy.

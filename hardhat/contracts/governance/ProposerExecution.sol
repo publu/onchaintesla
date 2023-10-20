@@ -7,7 +7,6 @@ import "@gnosis.pm/safe-contracts/contracts/common/Enum.sol";
 
 import "@gnosis.pm/zodiac/contracts/core/Module.sol";
 
-
 interface IGnosisSafe {
     /// @dev Allows a Module to execute a Safe transaction without any further confirmations.
     /// @param to Destination address of module transaction.
@@ -19,11 +18,11 @@ interface IGnosisSafe {
         returns (bool success);
 }
 
-/// @title ProposerExecutionModule
+/// @title ProposerExecutionModuleV2
 /// @notice A module for the Gnosis Safe Multisig wallet which allows allowlisted addresses 
 /// to propose transactions with a delay before execution. Only the multisig can add or remove
 /// addresses from the whitelist.
-contract ProposerExecutionModule is Module {
+contract ProposerExecutionModuleV2 is Module {
     
     // The delay before a proposed transaction can be executed, default to no delay
     uint256 public delay = 0;
