@@ -14,6 +14,8 @@ As a crypto enthusiast navigating the vast universe of DeFi, you need a reliable
 
 [Spark Lend](#spark-lend)
 
+[~~Hyperlame~~ Hyperlane](#hyperlane)
+
 [ApeCoin](#apecoin)
 
 [zkEVM](#zkevm)
@@ -47,6 +49,13 @@ Direct link to demo:
 
 related code (integration to the space cabin): src/components/XmtpChat.tsx
 
+## Hyperlane
+We've developed a Hyperlane proposer contract that enhances the cross-chain communication capabilities of our project. This contract processes messages from the Hyperlane cross-chain bridge, allowing for more complex and versatile transactions.
+
+Related code:
+hardhat/contracts/governance/HyperlaneProcessor.sol
+hardhat/contracts/governance/ProposerExecutionZodiac.sol
+
 ## Filecoin Virtual Machine
 We've innovatively incorporated on-chain achievements into our `Mintable.sol` contract. This enables the creation of unique achievements related to balance, farming, and borrowing. It's all self-service, eliminating the need for trust-based airdrops. Plus, it's fully interoperable, allowing anyone who connects to NFTs to participate. This game-changing feature makes the DeFi space more engaging and rewarding for users. We've also integrated achievements for Filecoin Virtual Machine holders. Prove you own some Filecoin to earn the NFT!
 
@@ -54,10 +63,12 @@ We've innovatively incorporated on-chain achievements into our `Mintable.sol` co
 
 ## Gnosis Safe
 We've developed a module for Connext that enables safes to send messages across chains. This cross-chain communication enhances the functionality of Gnosis Safe by allowing for more complex and versatile transactions.
+In addition to the Connext module, we've also created a module for Hyperlane, further expanding the cross-chain capabilities of Gnosis Safe.
 We also rewrote the old proposer module (included for visibility) into a Zodiac-enabled module. It was definitely a trip. Didn't realize how different the architecture was from a monolithic module.
 
 Related code:
 hardhat/contracts/governance/ConnextProcessor.sol
+hardhat/contracts/governance/HyperlaneProcessor.sol
 hardhat/contracts/governance/ProposerExecutionZodiac.sol
 
 ## Connext
@@ -65,6 +76,7 @@ We've integrated Connext, a modular interoperability protocol that lets you buil
 
 Related code:
 hardhat/contracts/governance/ConnextProcessor.sol
+hardhat/contracts/governance/ProposerExecutionZodiac.sol
 
 ## The Graph
 We've deployed a subgraph for the NFT achievements. You can explore it [here](https://thegraph.com/studio/subgraph/achievements/).
