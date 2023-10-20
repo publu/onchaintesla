@@ -7,7 +7,7 @@ import {Hooks} from "../../external_deps/uniswap/v4-core/contracts/libraries/Hoo
 import {FullMath} from "../../external_deps/uniswap/v4-core/contracts/libraries/FullMath.sol";
 import {SafeCast} from "../../external_deps/uniswap/v4-core/contracts/libraries/SafeCast.sol";
 import {IERC20Minimal} from "../../external_deps/uniswap/v4-core/contracts/interfaces/external/IERC20Minimal.sol";
-import {IERC1155Receiver} from "node_modules/@openzeppelin/contracts/token/ERC1155/IERC1155Receiver.sol";
+import {IERC1155Receiver} from "/node_modules/@openzeppelin/contracts/token/ERC1155/IERC1155Receiver.sol";
 import {BaseHook} from "./BaseHook.sol";
 import {Currency, CurrencyLibrary} from "../../external_deps/uniswap/v4-core/contracts/types/Currency.sol";
 import {BalanceDelta} from "../../external_deps/uniswap/v4-core/contracts/types/BalanceDelta.sol";

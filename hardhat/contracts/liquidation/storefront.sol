@@ -265,47 +265,6 @@ contract Storefront is ERC20, BaseLiquidator, ReentrancyGuard, Ownable {
         _buyrisky(_vault, _vaultID);
     }
 
-    // /**
-    //      * @dev This function is used to handle a liquidation scenario where the storefront contract does not have enough MAI locked to cover the cost of the liquidation. 
-    //      * It first checks the cost of the liquidation and reverts if the cost is lesser than the amount of MAI available
-    //      * @param _vault Address of the vault being liquidated
-    //      * @param _vaultID ID of the vault being liquidated
-    //      * @param _front The amount of collateral being liquidated
-    //  */
-    // function passthroughLiquidate(
-    //     address _vault, 
-    //     uint256 _vaultID,
-    //     int256 _front)
-    //     public
-    //     assertAdded(_vault) {
-    //     /*
-    //         CHECK
-    //         that gain must be accounted for liq bonus splitting
-    //     */
-    //     uint256 gain = _gainRatio(_vault)-1000; // ex: 1100-1000=100 which is 10% in the ten_thousands
-
-    //     uint256 cost = _checkLiquidationCost(_vault, _vaultID);
-    //     //uint256 totalCost = (cost*split/TEN_THOUSAND) + cost;
-    //     if(cost < getMaiLocked()) revert Storefront__StabilityPoolShouldLiquidate();
-
-    //     ERC20Like(mai).transferFrom(msg.sender, address(this), cost);
-
-    //     _liquidate(_vault, _vaultID, _front);
-
-    //     /*  
-    //         CHECK
-    //         Send mai from user "cost"
-    //     */
-    //     IStableQiVault vault = IStableQiVault(_vault);
-    //     ERC20Like collat = ERC20Like(vault.collateral());
-    //     uint256 before = collat.balanceOf(address(this)); // 1k
-    //     vault.getPaid();
-    //     uint256 despues = collat.balanceOf(address(this));  // 800
-    //     uint256 earned = despues - before;
-
-    //     collat.transfer(msg.sender, earned);
-    // }
-
     /**
         @dev Function to add a vault to the list of authorized vaults
         @param _vault address of the vault to add
@@ -485,6 +444,24 @@ contract Storefront is ERC20, BaseLiquidator, ReentrancyGuard, Ownable {
         collateral.transfer(msg.sender, toGive);
 
         emit StorefrontSale(_vault, amountMAI, toGive, collateralValue);
+    }
+
+    /**
+     * @dev Function to sell collateral for MAI using Uniswap
+     * @param _vault address of the vault that the collateral type
+     * @notice This function uses the LiquidatorHook contract to place a liquidity order on Uniswap
+     * @notice It first checks if the vault has enough liquidity before placing the order
+     */
+    function sellCollateralForMAIUniswap(address _vault) external {
+        // Get the PoolKey for the vault
+        PoolKey memory key = getPoolKeyForVault(_vault);
+        
+        // Check if liquidity is zero
+        uint128 liquidity = getLiquidityForVault(_vault);
+        if (liquidity == 0) revert ZeroLiquidity();
+        
+        // Call the place function from the LiquidatorHook contract
+        LiquidatorHook.place(key, key.tickSpacing, true, liquidity);
     }
 
     /**
