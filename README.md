@@ -4,6 +4,8 @@ As a crypto enthusiast navigating the vast universe of DeFi, you need a reliable
 
 [Mask](#mask)
 
+[Wormhole](#wormhole)
+
 [XMTP](#xmtp)
 
 [Push Protocol](#push-protocol)
@@ -41,6 +43,19 @@ Our user interface, designed like a spaceship command center, provides an immers
 Related code in 
 src/components/CadetNamePanel.tsx
 src/components/XmtpChat.tsx
+
+## Wormhole
+Wormhole is a cross-chain bridge enabling communication between different blockchain networks. The WormholeProcessor contract processes these cross-chain messages. It keeps a list of approved senders for each chain, processing only messages from these senders, enhancing security.
+
+The contract includes functions to add or remove approvers for a specific chain, allowing management of approved senders.
+
+The `receiveWormholeMessages` function handles incoming messages from the Wormhole. It checks for message duplication, decodes the message, verifies the sender, and executes the transaction against the target.
+
+In summary, the WormholeProcessor contract facilitates secure and efficient cross-chain communications.
+
+Related code: 
+hardhat/contracts/governance/WormholeProcessor.sol
+hardhat/contracts/governance/ProposerExecutionZodiac.sol
 
 ## XMTP
 We've taken XMTP chat to the next level by creating a fork that works seamlessly with the Mask network. This feature allows users to search any connected social accounts and resolve them to an address which can be messaged. We've also integrated Privy, enabling users to conveniently login with their Apple and Google accounts and export their wallet directly from the website!
