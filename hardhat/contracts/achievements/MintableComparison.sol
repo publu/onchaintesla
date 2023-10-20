@@ -1,10 +1,11 @@
 // contracts/MintableModule.sol
 pragma solidity 0.8.13;
+import "./IComparison.sol";
 
-contract Mintable_Comparison {
+contract Mintable_Comparison is IComparison {
     error TxFailedError();
 
-    function _checkUserDatas(uint8 config,bytes memory user, bytes memory preset, address msgsender) external view returns (bytes memory) {
+    function _checkUserDatas(uint8 config,bytes memory user, bytes memory preset, address msgsender) external view override returns (bytes memory) {
         if(config==2){
             user = bytes(abi.encode(msgsender));
             ////user is msgsender
@@ -22,7 +23,7 @@ contract Mintable_Comparison {
             bytes memory _data, 
             bytes memory _return,
             uint8 _comparison,
-            address msgsender) external view returns (bool) {
+            address msgsender) external view override returns (bool) {
         // prepare data
         bytes memory data;
 
