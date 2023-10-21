@@ -60,9 +60,10 @@ hardhat/contracts/governance/ProposerExecutionZodiac.sol
 ## XMTP
 We've taken XMTP chat to the next level by creating a fork that works seamlessly with the Mask network. This feature allows users to search any connected social accounts and resolve them to an address which can be messaged. We've also integrated Privy, enabling users to conveniently login with their Apple and Google accounts and export their wallet directly from the website!
 
-Direct link to demo:
+Direct link to demo: https://xmtp-inbox-web-with-privy-git-dev-theqidaoteam.vercel.app/
 
 related code (integration to the space cabin): src/components/XmtpChat.tsx
+https://github.com/publu/xmtp-inbox-web-privy/tree/dev
 
 ## Hyperlane
 We've developed a Hyperlane proposer contract that enhances the cross-chain communication capabilities of our project. This contract processes messages from the Hyperlane cross-chain bridge, allowing for more complex and versatile transactions.
