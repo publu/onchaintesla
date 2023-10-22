@@ -53,6 +53,8 @@ The `receiveWormholeMessages` function handles incoming messages from the Wormho
 
 In summary, the WormholeProcessor contract facilitates secure and efficient cross-chain communications.
 
+[Tweet for submission](https://twitter.com/itspublu/status/1716063747679400027)
+
 Related code: 
 [hardhat/contracts/governance/WormholeProcessor.sol](hardhat/contracts/governance/WormholeProcessor.sol)
 [hardhat/contracts/governance/ProposerExecutionZodiac.sol](hardhat/contracts/governance/ProposerExecutionZodiac.sol)
@@ -169,6 +171,9 @@ Related code:
 ## Mantle
 We've deployed an NFT achievements contract to let users earn NFTs for their on-chain activity. We've created a demo and art for MNT holders on Mantle.
 [https://explorer.mantle.xyz/address/0xFf0756582c66D59F3C1bd413F7D0A720c99B9992](https://explorer.mantle.xyz/address/0xFf0756582c66D59F3C1bd413F7D0A720c99B9992)
+
+Tweet submission:
+[https://twitter.com/itspublu/status/1716063374617067913](https://twitter.com/itspublu/status/1716063374617067913)
 
 Related code:
 [hardhat/contracts/achievements/ipfs/mantle.json](hardhat/contracts/achievements/ipfs/mantle.json)
