@@ -22,6 +22,7 @@ interface IWormholeReceiver {
 contract WormholeProcessor is IWormholeReceiver {
     address public executionModule;
     uint16 public origin;
+    address public wormhole;
 
     mapping(uint256 => mapping(address => mapping(address => bool))) private approvers;
     mapping(uint256 => mapping(address => address[])) private approversArray;
@@ -31,10 +32,12 @@ contract WormholeProcessor is IWormholeReceiver {
      * @notice Constructor for the WormholeProcessor contract
      * @param _executionModule Address of the execution module
      * @param _origin Origin of the chain
+     * @param _wormhole Origin of the chain
      */
-    constructor(address _executionModule, uint16 _origin) {
+    constructor(address _executionModule, uint16 _origin, address _wormhole) {
         executionModule = _executionModule;
         origin = _origin;
+        wormhole = _wormhole;
     }
 
     /**
@@ -89,7 +92,7 @@ contract WormholeProcessor is IWormholeReceiver {
     ) 
         external override payable
         returns (bytes memory) {
-
+        require(msg.sender == wormhole, "WormholeOnly");
         // Check if the transferId has been processed before
         require(!processedTransfers[sourceAddress][deliveryHash], "TransferAlreadyProcessed");
         processedTransfers[sourceAddress][deliveryHash] = true;
